@@ -1,0 +1,26 @@
+<div class="holder padding-zero">
+	<div class="people-plugin layout1">
+		<div class="plugin-banner clearfix">
+			<div class="plugin-slider text-center">
+				<div  ng-if="WidgetPeople.item.topImage" class="text-overlay">
+					<img load-image="2x1" data-final-src="{{WidgetPeople.item.topImage}}" crop-width="400" crop-height="200" crop-type="crop">
+					<!--<img ng-if="!WidgetPeople.item.topImage" src="../../../styles/media/holder-2x1.png">-->
+				</div>
+			</div>
+		</div>
+		<div class="people-info text-left padded padding-bottom-zero padding-top-ten clearfix ">
+			<div class="col-xs-10 padding-zero pull-left">
+				<p class="margin-zero text-overlay">{{WidgetPeople.item.fName}} {{WidgetPeople.item.lName}}</p>
+				<p class="margin-bottom-zero">{{WidgetPeople.item.position}}</p>
+			</div>
+			<div class="col-xs-2 padding-right-zero pull-right text-right text-overlay margin-top-ten">
+				<a ng-if="WidgetPeople.item.socialLinks.length" class="icon icon-profile text-overlay" ng-click="WidgetPeople.openLinks(WidgetPeople.item.socialLinks)"></a>
+			</div>
+		</div>
+		<div class="padded padding-top-zero">
+			<hr class="small">
+			<p class="break-word text-overlay" ng-if='WidgetPeople.item.bodyContent' ng-bind-html='WidgetPeople.safeHtml(WidgetPeople.item.bodyContent)'></p>
+			<p class="break-word" ng-if='!WidgetPeople.item.bodyContent'></p>
+		</div>
+	</div>
+</div>

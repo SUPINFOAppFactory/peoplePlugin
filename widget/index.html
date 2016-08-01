@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="peoplePluginWidget">
+<head lang="en">
+  <meta charset="UTF-8">
+
+  <!-- CSS -->
+  <link href="../../../styles/helper.css" rel="stylesheet">
+  <link href="../../../styles/siteIcons.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../scripts/owlCarousel/owlCarousel.css">
+  <link href="css/widget.app.css" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="../../../scripts/jquery/jquery-1.11.2.min.js"></script>
+  <script src="../../../../sdk/scripts/jquery/jquery-ui.min.js"></script>
+  <script src="../../../scripts/smartcrop.js"></script>
+  <script src="../../../scripts/buildfire.js"></script>
+  <script type="text/javascript" src="../../../scripts/owlCarousel/owlCarousel.js"></script>
+  <script src="../../../scripts/buildfire/components/carousel/carousel.js"></script>
+  <script src="../../../scripts/angular/angular.min.js"></script>
+  <script src="../../../scripts/angular/angular-route.min.js"></script>
+  <script src="../../../scripts/angular/angular-animate.min.js"></script>
+  <script src="../../../scripts/angular/ui-bootstrap.min.js"></script>
+  <script src="../../../scripts/angular/ng-infinite-scroll.custom.js"></script>
+  <script src="app.js"></script>
+  <script src="enums.js"></script>
+  <script src="filters.js"></script>
+  <script src="services.js"></script>
+  <script src="controllers/widget.home.controller.js"></script>
+  <script src="controllers/widget.people.controller.js"></script>
+  <script src="../../../scripts/angular/angular-animate.min.js"></script>
+  <link rel="stylesheet" href="../../../styles/transitionAnimation.css">
+</head>
+<body class="body-scroll">
+<div class="main_view">
+  <div class="slide infinite-scroll-parent" id="scrollable" data-back-img="{{ backgroundImage}}" ng-show="showHome">
+     <div ng-controller="WidgetHomeCtrl as WidgetHome">
+        <div ng-if="WidgetHome.data.design.listLayout"
+           ng-include="'templates/layouts/' + WidgetHome.data.design.listLayout + '.html'">
+      </div>
+    </div>
+  </div>
+  <div ng-view="" class="slide content" ng-hide="showHome" data-back-img="{{ backgroundImage}}"></div>
+</div>
+</body>
+</html>
